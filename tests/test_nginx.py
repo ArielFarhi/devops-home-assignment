@@ -62,5 +62,5 @@ if __name__ == "__main__":
     test_error_server()
     test_rate_limit()
 
-    print("\nAll tests passed ✔")
+    print("\nAll tests passed")
     sys.exit(0)

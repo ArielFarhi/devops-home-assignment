@@ -78,12 +78,15 @@ docker compose up --build --abort-on-container-exit --exit-code-from tests
 
 This will start the Nginx container and run the Python test container. The exit code will reflect the test result.
 
-## Optional: Enable HTTPS Port Mapping
+## HTTPS Support (Bonus)
 
-To expose HTTPS locally, add this to the `ports` section of the `nginx` service in `docker-compose.yml`:
+The Nginx container is configured with a self-signed TLS certificate and listens
+on port 443 by default.
 
-```yaml
-- "443:443"
-```
+After running `docker compose up`, HTTPS is available at:
 
-Then access `https://localhost` in your browser. Because the certificate is self-signed, your browser will show a warning.
+- https://localhost
+
+Because the certificate is self-signed, the browser will display a security warning.
+This is expected for local development.
+
