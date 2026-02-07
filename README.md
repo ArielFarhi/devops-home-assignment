@@ -22,7 +22,9 @@ A self-signed TLS certificate is also included and an HTTPS server is configured
 
 - **Ubuntu base**: required by the assignment, even though a slimmer Nginx image exists; size is reduced by cleaning `apt` lists.
 - **Single Nginx container, two server blocks**: keeps runtime simple while still demonstrating multi-service behavior.
-- **Self-signed TLS**: satisfies HTTPS requirement without external dependencies.
+- **Self-signed TLS**: satisfies HTTPS requirement without external dependencies.  
+  The self-signed certificate and private key are committed to the repository **for local testing purposes only**, as part of this assignment.  
+  In a real production environment, private keys should never be committed to version control and would be managed via a secrets manager (e.g. GitHub Secrets, Vault, or a cloud provider certificate service).
 - **Rate limit at the Nginx layer**: avoids application changes and is easy to tune centrally.
 
 ## Assumptions
